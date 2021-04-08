@@ -12,10 +12,12 @@ const UserSchema = new Schema({
         type: String,
         required: [true,'email is mandatory'],
         unique:true,
-        validator: function(v) {
-            return /.+\@.+\..+/.test(v);
-        },
-        message: props => `${props.value} is not a valid email address!`
+        validate: {
+            validator: function(v) {
+              return /.+\@.+\..+/.test(v);
+            },
+            message: props => `${props.value} is not a valid email address!`
+          }
     },
     thoughts: [
         {

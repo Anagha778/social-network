@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -16,6 +16,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network'
   useUnifiedTopology: true
 });
 
+mongoose.set('useCreateIndex', true);
 // Use this to log mongo queries being executed!
 mongoose.set('debug', true);
 
