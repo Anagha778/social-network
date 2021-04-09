@@ -85,10 +85,30 @@ const userController = {
               return;
           }
           res.json(dbUserData);
-          res.json({message: "Friend added successfully"});
+          //res.json({message: "Friend added successfully"});
       })
       .catch(err => res.json(err));
   },
+
+  // DELETE /api/users/:userId/friends/:friendId
+
+  deleteFriend({ params }, res) {
+    // remove friendId from userId's friend list
+    User.findOneAndUpdate(
+        { _id: params.userId },
+        { $pull: { friends: params.friendId } },
+        { new: true, runValidators: true }
+    )
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this userId' });
+            return;
+        }
+        res.json(dbUserData);
+        //res.json({message: "Friend removed successfully"});
+    })
+    .catch(err => res.json(err));
+  }
 
 }
 
