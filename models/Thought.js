@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model,Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 //create Reaction subdocument schema
@@ -13,6 +13,7 @@ reactionBody:{
     type: String,
     required: [true,'Reaction body is mandatory'],
     trim: true,
+    minlength:1,
     maxlength:280
 },
 username:{
