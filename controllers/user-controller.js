@@ -68,7 +68,7 @@ const userController = {
             res.json({message: 'User deleted successfully'});
             
             /*  // remove associated thoughts from this user
-            Thought.remove({ username : dbUserData.username },
+            Thought.deleteMany({ username : dbUserData.username },
               function(err, obj) {
                 if (err) throw err;
                 console.log(obj.result.n + " document(s) deleted");
@@ -135,7 +135,7 @@ const userController = {
               res.status(404).json({ message: 'No user with this friendId' })
               return;
           }
-          res.json({message: 'Friend deleted successfully'});
+          res.json(dbUserData);
       })
       .catch(err => res.json(err));
   })
