@@ -64,13 +64,17 @@ const userController = {
               res.status(404).json({ message: 'No user found with this id!' });
               return;
             }
-              // remove associated thoughts from this user
-            Thought.deleteMany({ username : dbUserData.username },
+            console.log(dbUserData);
+            res.json({message: 'User deleted successfully'});
+            
+            /*  // remove associated thoughts from this user
+            Thought.remove({ username : dbUserData.username },
               function(err, obj) {
                 if (err) throw err;
                 console.log(obj.result.n + " document(s) deleted");
-              });
-              res.json(dbUserData);
+                
+              })
+              .catch(err => res.json(err));*/
             })
           .catch(err => res.json(err));
     },

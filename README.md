@@ -12,7 +12,7 @@ Run following commands to install required packages:
 
 * npm init : Create package.json file and add dependencies and version once added.
 * npm i express : To install express.js package for routing.
-* npm i mongoose : Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+* npm i mongoose : Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. It handles the connection between the API and the MongoDB database.Mongoose supports both promises and callbacks.  
 * mongod : Run this command from gitbash to start mongodb server.
 * npm start/ node server.js - Run this command to start an application execution.
 
