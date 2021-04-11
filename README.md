@@ -59,6 +59,8 @@ Run following commands to install required packages:
 
 ## Video link
 
+[Application walkthrough video link](./images/social.mp4)
+
 ## Mock up images:
 The following animations show examples of the application's API routes being tested in Insomnia Core.
 
